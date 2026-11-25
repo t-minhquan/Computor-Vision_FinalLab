@@ -1,0 +1,166 @@
+{
+  "started_at": "2026-11-25T18:30:02+07:00",
+  "finished_at": "2026-11-25T18:38:43+07:00",
+  "model": "D:\\Download\\Computor-Vision_FinalLab\\models\\hog_baseline.joblib",
+  "model_bytes": 368960268,
+  "data_dir": "D:\\Download\\Computor-Vision_FinalLab\\data\\raw\\test",
+  "output_dir": "D:\\Download\\Computor-Vision_FinalLab\\experiments\\results\\20261125_183000_hog_eval",
+  "input_mode": "cropped_faces",
+  "feature_type": "hog",
+  "feature_version": "hog128-cell16-block32-stride16-bins9-l2hys-no-gamma-v1",
+  "features_per_image": 1764,
+  "svm_parameters": {
+    "C": 10.0,
+    "kernel": "rbf",
+    "gamma": "scale",
+    "class_weight": "balanced"
+  },
+  "total_images": 7178,
+  "processed_images": 7178,
+  "failed_images": 0,
+  "accuracy": 0.5976595151852884,
+  "macro_f1": 0.5984522322294578,
+  "weighted_f1": 0.5959296600359449,
+  "mean_latency_ms": 56.80254667038172,
+  "latency_std_ms": 39.46195168001771,
+  "elapsed_seconds": 522.0476759000012,
+  "labels": [
+    "neutral",
+    "happiness",
+    "sadness",
+    "surprise",
+    "anger",
+    "disgust",
+    "fear"
+  ],
+  "confusion_columns": [
+    "neutral",
+    "happiness",
+    "sadness",
+    "surprise",
+    "anger",
+    "disgust",
+    "fear"
+  ],
+  "confusion_matrix": [
+    [
+      670,
+      150,
+      177,
+      26,
+      99,
+      0,
+      111
+    ],
+    [
+      91,
+      1422,
+      103,
+      35,
+      71,
+      0,
+      52
+    ],
+    [
+      202,
+      131,
+      624,
+      18,
+      134,
+      3,
+      135
+    ],
+    [
+      41,
+      50,
+      33,
+      598,
+      35,
+      1,
+      73
+    ],
+    [
+      118,
+      110,
+      146,
+      18,
+      468,
+      4,
+      94
+    ],
+    [
+      5,
+      5,
+      6,
+      1,
+      24,
+      64,
+      6
+    ],
+    [
+      115,
+      73,
+      206,
+      67,
+      117,
+      2,
+      444
+    ]
+  ],
+  "per_class": {
+    "neutral": {
+      "precision": 0.5394524959742351,
+      "recall": 0.5433901054339011,
+      "f1-score": 0.5414141414141415,
+      "support": 1233.0
+    },
+    "happiness": {
+      "precision": 0.732612055641422,
+      "recall": 0.8015783540022547,
+      "f1-score": 0.7655450874831763,
+      "support": 1774.0
+    },
+    "sadness": {
+      "precision": 0.48185328185328186,
+      "recall": 0.5004009623095429,
+      "f1-score": 0.4909520062942565,
+      "support": 1247.0
+    },
+    "surprise": {
+      "precision": 0.783748361730013,
+      "recall": 0.7196149217809867,
+      "f1-score": 0.7503136762860728,
+      "support": 831.0
+    },
+    "anger": {
+      "precision": 0.4936708860759494,
+      "recall": 0.48851774530271397,
+      "f1-score": 0.4910807974816369,
+      "support": 958.0
+    },
+    "disgust": {
+      "precision": 0.8648648648648649,
+      "recall": 0.5765765765765766,
+      "f1-score": 0.6918918918918919,
+      "support": 111.0
+    },
+    "fear": {
+      "precision": 0.4852459016393443,
+      "recall": 0.43359375,
+      "f1-score": 0.45796802475502835,
+      "support": 1024.0
+    }
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.6",
+    "packages": {
+      "numpy": "2.2.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "joblib": "1.6.0",
+      "opencv-python-headless": "4.12.0.88"
+    }
+  },
+  "protocol": "All labeled images; no fitting or parameter tuning. Processing errors count as incorrect and false negatives. Latency covers successful pipeline calls, excluding file reads and model loading. Folder names supply ground truth; split provenance is the caller's responsibility."
+}

@@ -1,0 +1,157 @@
+{
+  "started_at": "2026-11-25T16:54:37+07:00",
+  "finished_at": "2026-11-25T17:05:26+07:00",
+  "model": "D:\\Download\\Computor-Vision_FinalLab\\models\\fer.joblib",
+  "model_bytes": 790071484,
+  "data_dir": "D:\\Download\\Computor-Vision_FinalLab\\data\\raw\\test",
+  "output_dir": "D:\\Download\\Computor-Vision_FinalLab\\experiments\\results\\20261125_165436_fer_eval",
+  "input_mode": "cropped_faces",
+  "total_images": 7178,
+  "processed_images": 7178,
+  "failed_images": 0,
+  "accuracy": 0.5784341042073001,
+  "macro_f1": 0.5696405073701117,
+  "weighted_f1": 0.5772055656155044,
+  "mean_latency_ms": 79.32435720256339,
+  "latency_std_ms": 13.590419164687482,
+  "elapsed_seconds": 649.0735459999996,
+  "labels": [
+    "neutral",
+    "happiness",
+    "sadness",
+    "surprise",
+    "anger",
+    "disgust",
+    "fear"
+  ],
+  "confusion_columns": [
+    "neutral",
+    "happiness",
+    "sadness",
+    "surprise",
+    "anger",
+    "disgust",
+    "fear"
+  ],
+  "confusion_matrix": [
+    [
+      664,
+      150,
+      176,
+      26,
+      116,
+      1,
+      100
+    ],
+    [
+      114,
+      1394,
+      99,
+      27,
+      81,
+      0,
+      59
+    ],
+    [
+      203,
+      140,
+      568,
+      22,
+      153,
+      3,
+      158
+    ],
+    [
+      53,
+      48,
+      28,
+      579,
+      35,
+      0,
+      88
+    ],
+    [
+      135,
+      103,
+      134,
+      17,
+      458,
+      4,
+      107
+    ],
+    [
+      5,
+      8,
+      10,
+      2,
+      25,
+      52,
+      9
+    ],
+    [
+      124,
+      69,
+      175,
+      78,
+      139,
+      2,
+      437
+    ]
+  ],
+  "per_class": {
+    "neutral": {
+      "precision": 0.5115562403697997,
+      "recall": 0.5385239253852393,
+      "f1-score": 0.5246937969182142,
+      "support": 1233.0
+    },
+    "happiness": {
+      "precision": 0.7290794979079498,
+      "recall": 0.7857948139797069,
+      "f1-score": 0.7563754747693977,
+      "support": 1774.0
+    },
+    "sadness": {
+      "precision": 0.4773109243697479,
+      "recall": 0.45549318364073776,
+      "f1-score": 0.46614690192860075,
+      "support": 1247.0
+    },
+    "surprise": {
+      "precision": 0.7709720372836218,
+      "recall": 0.6967509025270758,
+      "f1-score": 0.7319848293299621,
+      "support": 831.0
+    },
+    "anger": {
+      "precision": 0.4548162859980139,
+      "recall": 0.4780793319415449,
+      "f1-score": 0.46615776081424937,
+      "support": 958.0
+    },
+    "disgust": {
+      "precision": 0.8387096774193549,
+      "recall": 0.46846846846846846,
+      "f1-score": 0.6011560693641619,
+      "support": 111.0
+    },
+    "fear": {
+      "precision": 0.4561586638830898,
+      "recall": 0.4267578125,
+      "f1-score": 0.4409687184661958,
+      "support": 1024.0
+    }
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.6",
+    "packages": {
+      "numpy": "2.2.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "joblib": "1.6.0",
+      "opencv-python-headless": "4.12.0.88"
+    }
+  },
+  "protocol": "All labeled images; no fitting or parameter tuning. Processing errors count as incorrect and false negatives. Latency covers successful pipeline calls, excluding file reads and model loading. Folder names supply ground truth; split provenance is the caller's responsibility."
+}

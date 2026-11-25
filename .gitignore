@@ -102,3 +102,12 @@ scratch/
 .tmp/
 *.tmp
 pdf/use_api.md
+
+# Keep the folder scaffold without committing images or trained artifacts.
+!/data/
+/data/**
+!/data/**/
+!/data/**/.gitkeep
+!/models/
+/models/*
+!/models/.gitkeep

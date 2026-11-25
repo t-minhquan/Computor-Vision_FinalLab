@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Thử nhận diện 7 biểu cảm khuôn mặt từ ảnh.">
+  <title>FER Lab · Nhận diện cảm xúc</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="brand" href="/" aria-label="FER Lab, trang chủ"><span class="brand-mark">F</span> FER LAB</a>
+      <a href="/docs">Tài liệu API</a>
+    </header>
+
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">THỬ NGHIỆM THỊ GIÁC MÁY TÍNH</p>
+      <h1 id="title">Một khuôn mặt.<br><span>Bảy sắc thái cảm xúc.</span></h1>
+      <p class="subtitle">Chọn một bức ảnh rõ mặt để thử nhận diện biểu cảm.</p>
+    </section>
+
+    <section class="connection" aria-label="Trạng thái kết nối">
+      <div><span id="model-status" class="badge" role="status">Đang kiểm tra backend…</span><p id="model-hint">Đợi một chút để kiểm tra model.</p></div>
+      <button id="refresh" class="secondary" type="button">Kiểm tra lại</button>
+    </section>
+
+    <div class="workspace">
+      <section class="panel" aria-labelledby="upload-heading">
+        <div class="panel-heading"><h2 id="upload-heading">Ảnh của bạn</h2><span>JPEG / PNG</span></div>
+        <form id="upload-form">
+          <div class="preview-area">
+            <div id="placeholder" class="placeholder">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="16" stroke="currentColor" stroke-width="2"/><path d="M22 27h2m16 0h2M23 39c5 6 13 6 18 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+              <p>Ảnh xem trước</p><span>Một khuôn mặt, nhìn gần trực diện</span>
+            </div>
+            <img id="preview" alt="Ảnh được chọn để nhận diện cảm xúc" hidden>
+          </div>
+          <label for="image-file">Chọn ảnh từ máy</label>
+          <input id="image-file" name="file" type="file" accept="image/jpeg,image/png" aria-describedby="file-hint">
+          <p id="file-hint" class="help">Tối đa 5 MiB, 12 megapixel. Ảnh upload không được lưu.</p>
+          <label class="crop-option"><input id="cropped-faces" type="checkbox" aria-describedby="cropped-hint">Ảnh đã cắt mặt (FER2013)</label>
+          <p id="cropped-hint" class="help">Bật khi ảnh chỉ chứa một khuôn mặt đã cắt sẵn. Ứng dụng sẽ dùng nguyên ảnh và bỏ bước tìm mặt. Với ảnh chụp bình thường, để tắt.</p>
+          <button id="predict" class="primary" type="submit" disabled>Nhận diện cảm xúc</button>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading" aria-busy="false" id="result-panel">
+        <div class="panel-heading"><h2 id="result-heading">Kết quả nhận diện</h2><span>FER · 7 lớp</span></div>
+        <div id="result-empty" class="result-empty"><span class="result-symbol" aria-hidden="true">◎</span><h3>Sẵn sàng khám phá?</h3><p>Chọn ảnh rồi nhấn nhận diện.<br>Kết quả sẽ xuất hiện tại đây.</p></div>
+        <div id="result" class="result" hidden aria-live="polite">
+          <p class="eyebrow">BIỂU CẢM ĐƯỢC NHẬN DIỆN</p>
+          <h3 id="emotion"></h3><p id="emotion-label" class="english-label"></p>
+          <dl><div><dt>Thời gian xử lý</dt><dd id="latency"></dd></div><div><dt>Vùng xử lý (x, y, w, h)</dt><dd id="face-box"></dd></div></dl>
+        </div>
+        <p id="error" class="error" role="alert" hidden></p>
+        <p class="note">Kết quả mô tả biểu cảm quan sát được, không kết luận trạng thái tâm lý.</p>
+      </section>
+    </div>
+    <footer>Nhận diện cảm xúc dưới ánh sáng không đồng đều <span>UTH · Computer Vision</span></footer>
+  </main>
+</body>
+</html>
